@@ -1,0 +1,46 @@
+@use '../../../styles/variables.scss' as *;
+
+.footer {
+  padding: 64px 45px;
+
+  .footer-columns {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+
+    .footer-column {
+      h4 {
+        margin: 0;
+        margin-bottom: 16px;
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          margin-bottom: 16px;
+
+          a {
+            text-decoration: none;
+            font-size: 14px;
+            font-family: "Open Sans", sans-serif;
+            color: $green-primary;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+  .bottom-footer {
+    font-size: 14px;
+    p {
+      margin: 0;
+    }
+  }
+}
