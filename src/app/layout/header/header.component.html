@@ -1,0 +1,55 @@
+<header class="header">
+  <div class="header-top">
+    <div class="contact-info">
+      <a>Chat with us</a>
+      <span class="phone">+420 336 775 664</span>
+      <span class="email">info&#64;freshnesecom.com</span>
+    </div>
+    <div class="header-links">
+      <a routerLink="blog" routerLinkActive="active">Blog</a>
+      <a>About us</a>
+      <a>Careers</a>
+    </div>
+  </div>
+  <div class="header-main">
+    <a routerLink="/" class="header-title">
+      <img src="/brand.svg" class="header-logo"
+    /></a>
+    <app-search-filter></app-search-filter>
+    <div class="icon-container">
+      <button class="icon-button">
+        <img src="icons/ic-actions-user.svg" class="icon" />
+      </button>
+      <button class="icon-button">
+        <img src="icons/ic-ecommerce-basket.svg" class="icon" />
+        <span class="item-count">5</span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <ul class="nav">
+      @for (category of categories; track category.label) {
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-toggle"
+            (click)="toggleDropdown(category)"
+            [attr.aria-expanded]="category.isOpen"
+          >
+            {{ category.label }}
+          </a>
+          <ul class="dropdown-menu" [ngClass]="{ show: category.isOpen }">
+            @for (
+              subCategory of category.subCategories;
+              track subCategory.name
+            ) {
+              <li class="dropdown-item" (click)="closeDropdown(category)">
+                <a>{{ subCategory.name }}</a>
+              </li>
+            }
+          </ul>
+        </li>
+      }
+    </ul>
+  </nav>
+</header>
