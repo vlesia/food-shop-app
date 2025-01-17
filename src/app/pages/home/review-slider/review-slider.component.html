@@ -1,0 +1,38 @@
+<section class="reviews-section">
+  <h2>Our customers says</h2>
+
+  <div
+    class="slider"
+    [class.center]="customerReviews.length <= 3"
+    [ngStyle]="{ transform: 'translateX(' + currentTranslateX + '%)' }"
+  >
+    @for (review of customerReviews; track review.lastName) {
+      <div class="slide">
+        <p>
+          {{ review.review }}
+        </p>
+        <span>{{ review.firstName + " " + review.lastName }}</span>
+        <img class="icon" src="icons/ellipse.svg" />
+      </div>
+    }
+  </div>
+
+  @if (customerReviews.length > 3) {
+    <button
+      class="btn-left"
+      (click)="moveLeft()"
+      [disabled]="currentIndex === 0"
+    >
+      <img src="icons/slider-left.svg" alt="Previous" />
+    </button>
+
+    <button
+      *ngIf="customerReviews.length > 3"
+      class="btn-right"
+      (click)="moveRight()"
+      [disabled]="currentIndex === customerReviews.length - visibleSlides"
+    >
+      <img src="icons/slider-right.svg" alt="Next" />
+    </button>
+  }
+</section>
