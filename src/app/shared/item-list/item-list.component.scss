@@ -1,0 +1,27 @@
+@use '../../../styles/variables.scss' as *;
+
+.categories-container {
+  min-width: 270px;
+
+  .categories-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  .categories-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 48px;
+
+    .categories-item {
+      margin-bottom: 12px;
+      text-decoration: underline;
+      font-family: "Open Sans", sans-serif;
+      font-size: 14px;
+      color: $green-primary;
+      transition: background-color 0.3s;
+      cursor: pointer;
+    }
+  }
+}

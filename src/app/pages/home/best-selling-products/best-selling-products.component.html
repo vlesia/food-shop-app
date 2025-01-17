@@ -1,0 +1,6 @@
+<section class="products-container">
+  <app-item-list [items]="categories" title="Best selling products"> </app-item-list>
+  @for (product of products; track product.id) {
+    <app-card [product]="product"></app-card>
+  }
+</section>
