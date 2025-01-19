@@ -1,0 +1,78 @@
+@use "../../../../styles/variables.scss" as *;
+
+.search-filter {
+  display: flex;
+  align-items: center;
+  width: 500px;
+  padding: 8px 16px;
+  border: 1px solid $text-light;
+  border-radius: 12px;
+  background-color: $bg-base;
+
+  .category-select {
+    position: relative;
+    display: inline-block;
+
+    select {
+      border: none;
+      padding-right: 24px;
+      color: $text-primary;
+      font-size: 15px;
+      font-weight: 700;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-color: $bg-base;
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      background: url("/icons/ic-chevron-down.svg") no-repeat center;
+      background-size: contain;
+      pointer-events: none;
+    }
+  }
+
+  .divider {
+    width: 1px;
+    height: 20px;
+    background-color: $text-light;
+    margin: 0 24px;
+  }
+
+  .search-input {
+    flex-grow: 1;
+    border: none;
+    padding: 0;
+    margin-right: 12px;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    background-color: $bg-base;
+
+    &::placeholder {
+      color: $text-muted;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+}
