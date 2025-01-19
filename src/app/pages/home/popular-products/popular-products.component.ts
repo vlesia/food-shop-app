@@ -1,21 +1,29 @@
-import { Category, ListItem } from '../../../models/category.model';
 import { Component, DestroyRef, inject, OnInit } from '@angular/core';
 
-import { CardComponent } from '../../../shared/card/card.component';
-import { ProductService } from './../../../services/product.service';
 import { Product } from '../../../models/product.model';
+import { ProductService } from '../../../services/product.service';
 import { ItemListComponent } from '../../../shared/item-list/item-list.component';
+import { CardComponent } from '../../../shared/card/card.component';
 
 @Component({
-  selector: 'app-best-selling-products',
+  selector: 'app-popular-products',
   standalone: true,
-  imports: [CardComponent, ItemListComponent],
-  templateUrl: './best-selling-products.component.html',
-  styleUrl: './best-selling-products.component.scss',
+  imports: [ItemListComponent, CardComponent],
+  templateUrl: './popular-products.component.html',
+  styleUrl: './popular-products.component.scss',
 })
-export class BestSellingProductsComponent implements OnInit {
+export class PopularProductsComponent implements OnInit {
   public products: Product[] = [];
-  public categories: ListItem[] = Object.values(Category).map((name) => ({ name }));
+  public productsList = [
+    { name: 'Potatoes' },
+    { name: 'Carrots' },
+    { name: 'Zucchini' },
+    { name: 'Blueberries' },
+    { name: 'Avocados' },
+    { name: 'Spinach' },
+    { name: 'Tomatoes' },
+    { name: 'Broccoli' },
+  ];
 
   private productService = inject(ProductService);
   private destroyRef = inject(DestroyRef);
