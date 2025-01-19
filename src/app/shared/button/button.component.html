@@ -1,0 +1,6 @@
+<button [ngClass]="customClass" (click)="handleClick($event)">
+  <span>{{ label }}</span>
+  @if (icon) {
+    <img [src]="icon" />
+  }
+</button>

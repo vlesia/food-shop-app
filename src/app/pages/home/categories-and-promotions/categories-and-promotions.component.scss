@@ -1,0 +1,12 @@
+@use "../../../../styles/variables.scss" as *;
+
+:host {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 45px;
+
+  .promotion-container {
+    display: flex;
+    gap: 30px;
+  }
+}
