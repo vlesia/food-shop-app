@@ -1,0 +1,15 @@
+<div class="categories-container">
+  <h3 class="categories-title">{{ title }}</h3>
+  <ul class="categories-list">
+    @for (item of displayedItems; track item.name) {
+      <li class="categories-item">
+        {{ item.name }}
+      </li>
+    }
+  </ul>
+  <app-button
+    label="More categories"
+    icon="icons/ic-chevron-right.svg"
+    (onClick)="loadAllItems()"
+  ></app-button>
+</div>
